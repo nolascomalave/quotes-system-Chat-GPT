@@ -1,0 +1,220 @@
+@import 'vars';
+
+.upload-img{
+    display: inline-block;
+
+    &__img{
+        position: relative;
+        display: inherit;
+
+        .chooser-photo, .photo-button{
+            width: 5em;
+            height: 5em;
+            font-size: inherit;
+            border: none;
+            border-radius: 50%;
+            background-color: transparent;
+
+            svg{
+                font-size: 2.5em;
+                border-radius: 50%;
+                color: $secondary;
+            }
+        }
+
+        .photo-button{
+            img{
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+            }
+        }
+
+        button{
+            outline: none;
+        }
+
+        .chooser-photo{
+            border: .15em dashed $secondary;
+            transition-duration: .25s;
+
+            svg{
+                transition-duration: inherit;
+            }
+
+            &:hover, &:focus{
+                color:$primary;
+                border-color: $primary;
+
+                svg{
+                    color: inherit;
+                }
+            }
+        }
+
+        .buttons{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        .update-button, .delete-button{
+            font-size: inherit;
+            border-radius: 50%;
+        }
+
+        .update-button{
+            width: 1.5em;
+            height: 1.5em;
+            border: none;
+            background-color: $primary;
+            opacity: .75;
+            transition-duration: .25s;
+
+            svg{
+                color: white;
+            }
+
+            &:hover, &:focus{
+                opacity: 1;
+            }
+        }
+    }
+
+    &__screen{
+        position: fixed;
+        padding: 2em;
+        background-color: rgba(black, .25);
+
+        .container{
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+
+            &__photo{
+                height: 100%;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    object-position: center;
+                }
+            }
+
+            .photo{
+                background-color: rgba(black, .5);
+            }
+
+            .close{
+                position: absolute;
+                top: -1em;
+                right: -1em;
+                width: 2em;
+                height: 2em;
+                color:white;
+                border-radius: 50%;
+                border:none;
+                background-color: rgba(black, .5);
+                transition-duration: .25s;
+                z-index: 2;
+
+                svg{
+                    font-size: 1.5em;
+                    transition-duration: inherit;
+                }
+
+                &:hover svg, &:focus svg{
+                    font-size: 1.75em;
+                    color: $light-error-color;
+                }
+            }
+
+            .reactEasyCrop_Container{
+                bottom: 5.5em;
+                z-index: 0;
+            }
+        }
+
+        .css-187mznn-MuiSlider-root{
+            padding: 1em 0;
+            padding-bottom: 0;
+        }
+
+        .buttons{
+            flex-shrink: 0;
+            padding-top: .5em;
+
+            button{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: .25em;
+                margin-right: 1em;
+                font-size: inherit;
+                color: white;
+                border: .15em solid white;
+                border-radius: 50%;
+                box-shadow: 0 0 .25em lighten(black, 5);
+                background-color: $primary;
+
+                svg{
+                    font-size: 1.5em;
+                }
+
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+.upload-img.alternative{
+    width: 100%;
+    height: 100%;
+
+    .upload-img__img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: static;
+        width: 100%;
+        height: 100%;
+
+        img.photo{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            background-color: rgba(0,0,0,.8);
+        }
+
+        .buttons{
+            bottom: .5em;
+            left:0;
+
+            .update-button{
+                margin-right: 1em;
+            }
+        }
+
+        .update-button, .delete-button{
+            width: 2em;
+            height: 2em;
+            font-size: 1.2em;
+            color:white;
+            border: none;
+            background-color: rgba(0,0,0,.75);
+            opacity: .4;
+            transition-duration: .25s;
+
+            &:hover, &:focus{
+                opacity: 1;
+            }
+        }
+    }
+}

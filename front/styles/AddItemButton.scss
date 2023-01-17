@@ -1,0 +1,16 @@
+.add-item-button{
+    position: fixed;
+    right: .35em;
+    bottom: .35em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.35em;
+    height: 1.35em;
+    font-size: 2.5em;
+    color:white;
+    border-radius: 50%;
+    border: .1em solid white;
+    box-shadow: 0 .25em .5em darken($fond, 10);
+    background-image: linear-gradient(to bottom, $primary, darken($primary, 5));
+}

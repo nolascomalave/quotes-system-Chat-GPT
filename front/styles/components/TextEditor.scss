@@ -1,0 +1,416 @@
+.text-editor {
+	height: 100%;
+	border-radius: .5em;
+	background-color: white;
+
+	&__toolbar {
+		display: flex;
+		flex-flow: wrap;
+		margin-bottom: 0.0625em;
+		background: #fff;
+		padding: .25em;
+		border-top-left-radius: .5em;
+		border-top-right-radius: .5em;
+		vertical-align: middle;
+		border-bottom: .0625em solid #eee;
+		background-color: darken(white, 5);
+
+		&__item {
+			border: 0;
+			display: flex;
+			background: none;
+			border-radius: .25em;
+			padding: .5em;
+			cursor: pointer;
+			vertical-align: middle;
+
+			&.spaced {
+				margin-right: .125em;
+
+				i.format {
+					opacity: 0.2;
+				}
+			}
+
+			i.format {
+				background-size: contain;
+				display: inline-block;
+				height: 1.125em;
+				width: 1.125em;
+				margin-top: .125em;
+				vertical-align: -0.25em;
+				display: flex;
+				opacity: 0.6;
+			}
+
+			&:hover:not([disabled]) {
+				background-color: #eee;
+			}
+
+			&.active {
+				background-color: #eee;
+
+				i {
+					opacity: 1;
+
+					&.format{
+						opacity: 1;
+					}
+				}
+			}
+
+			i.undo, i.redo {
+				opacity: .6 !important;
+			}
+
+			i.left-align, i.center-align, i.right-align, i.justify-align {
+				opacity: .6 !important;
+			}
+
+			&:disabled {
+				cursor: not-allowed;
+
+				i.undo, i.redo {
+					opacity: .2 !important;
+				}
+			}
+
+			&.block-controls {
+				display: flex;
+				align-items: center;
+
+				.text {
+					height: auto !important;
+				}
+			}
+		}
+
+		.divider {
+			width: .0625em;
+			background-color: #eee;
+			margin: 0 .25em;
+		}
+
+		select.text-editor__toolbar__item {
+			border: 0;
+			display: flex;
+			background: none;
+			border-radius: .625em;
+			padding: .5em;
+			vertical-align: middle;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			width: 4.375em;
+			font-size: .875em;
+			color: #777;
+			text-overflow: ellipsis;
+		}
+
+		select.code-language {
+			text-transform: capitalize;
+			width: 8.125em;
+		}
+
+		.text {
+			display: flex;
+			line-height: 1.25em;
+			width: 12.5em;
+			vertical-align: middle;
+			font-size: .875em;
+			color: #777;
+			text-overflow: ellipsis;
+			width: 70px;
+			overflow: hidden;
+			height: 20px;
+			text-align: left;
+		}
+
+	}
+
+
+
+	i.chevron-down {
+	  background-color: transparent;
+	  background-size: contain;
+	  display: inline-block;
+	  height: 8px;
+	  width: 8px;
+	  background-image: url('../../public/source/icons/chevron-down.svg');
+	}
+
+	#block-controls button:hover {
+	  background-color: #efefef;
+	}
+
+	#block-controls button:focus-visible {
+	  border-color: blue;
+	}
+
+	#block-controls span.block-type {
+	  background-size: contain;
+	  display: block;
+	  width: 18px;
+	  height: 18px;
+	  margin: 2px;
+	}
+
+	#block-controls span.block-type.paragraph {
+	  background-image: url('../../public/source/icons/text-paragraph.svg');
+	}
+
+	#block-controls span.block-type.h1 {
+	  background-image: url('../../public/source/icons/type-h1.svg');
+	}
+
+	#block-controls span.block-type.h2 {
+	  background-image: url('../../public/source/icons/type-h2.svg');
+	}
+
+	#block-controls span.block-type.quote {
+	  background-image: url('../../public/source/icons/chat-square-quote.svg');
+	}
+
+	#block-controls span.block-type.ul {
+	  background-image: url('../../public/source/icons/list-ul.svg');
+	}
+
+	#block-controls span.block-type.ol {
+	  background-image: url('../../public/source/icons/list-ol.svg');
+	}
+
+	#block-controls span.block-type.code {
+	  background-image: url('../../public/source/icons/code.svg');
+	}
+
+	.dropdown {
+	  z-index: 5;
+	  display: block;
+	  position: absolute;
+	  box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.1),
+	    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+	  border-radius: 8px;
+	  min-width: 100px;
+	  min-height: 40px;
+	  background-color: #fff;
+	  z-index: 1;
+	}
+
+	.dropdown .item {
+	  margin: 0 8px 0 8px;
+	  padding: 8px;
+	  color: #050505;
+	  cursor: pointer;
+	  line-height: 16px;
+	  font-size: 15px;
+	  display: flex;
+	  align-content: center;
+	  flex-direction: row;
+	  flex-shrink: 0;
+	  justify-content: space-between;
+	  background-color: #fff;
+	  border-radius: 8px;
+	  border: 0;
+	  min-width: 268px;
+	}
+
+	.dropdown .item .active {
+	  display: flex;
+	  width: 20px;
+	  height: 20px;
+	  background-size: contain;
+	}
+
+	.dropdown .item:first-child {
+	  margin-top: 8px;
+	}
+
+	.dropdown .item:last-child {
+	  margin-bottom: 8px;
+	}
+
+	.dropdown .item:hover {
+	  background-color: #eee;
+	}
+
+	.dropdown .item .text {
+	  display: flex;
+	  line-height: 20px;
+	  flex-grow: 1;
+	  width: 200px;
+	}
+
+	.dropdown .item .icon {
+	  display: flex;
+	  width: 20px;
+	  height: 20px;
+	  user-select: none;
+	  margin-right: 12px;
+	  line-height: 16px;
+	  background-size: contain;
+	}
+
+	.link-editor {
+	  position: absolute;
+	  z-index: 100;
+	  top: -10000px;
+	  left: -10000px;
+	  margin-top: -6px;
+	  max-width: 300px;
+	  width: 100%;
+	  opacity: 0;
+	  background-color: #fff;
+	  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+	  border-radius: 8px;
+	  transition: opacity 0.5s;
+	}
+
+	.link-editor .link-input {
+	  display: block;
+	  width: calc(100% - 24px);
+	  box-sizing: border-box;
+	  margin: 8px 12px;
+	  padding: 8px 12px;
+	  border-radius: 15px;
+	  background-color: #eee;
+	  font-size: 15px;
+	  color: rgb(5, 5, 5);
+	  border: 0;
+	  outline: 0;
+	  position: relative;
+	  font-family: inherit;
+	}
+
+	.link-editor div.link-edit {
+	  background-image: url('../../public/source/icons/pencil-fill.svg');
+	  background-size: 16px;
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  width: 35px;
+	  vertical-align: -0.25em;
+	  position: absolute;
+	  right: 0;
+	  top: 0;
+	  bottom: 0;
+	  cursor: pointer;
+	}
+
+	.link-editor .link-input a {
+	  color: rgb(33, 111, 219);
+	  text-decoration: none;
+	  display: block;
+	  white-space: nowrap;
+	  overflow: hidden;
+	  margin-right: 30px;
+	  text-overflow: ellipsis;
+	}
+
+	.link-editor .link-input a:hover {
+	  text-decoration: underline;
+	}
+
+	.link-editor .button {
+	  width: 20px;
+	  height: 20px;
+	  display: inline-block;
+	  padding: 6px;
+	  border-radius: 8px;
+	  cursor: pointer;
+	  margin: 0 2px;
+	}
+
+	.link-editor .button.hovered {
+	  width: 20px;
+	  height: 20px;
+	  display: inline-block;
+	  background-color: #eee;
+	}
+
+	.link-editor .button i,
+	.actions i {
+	  background-size: contain;
+	  display: inline-block;
+	  height: 20px;
+	  width: 20px;
+	  vertical-align: -0.25em;
+	}
+
+	i.undo {
+	  background-image: url('../../public/source/icons/arrow-counterclockwise.svg');
+	}
+
+	i.redo {
+	  background-image: url('../../public/source/icons/arrow-clockwise.svg');
+	}
+
+	.icon.paragraph {
+	  background-image: url('../../public/source/icons/text-paragraph.svg');
+	}
+
+	.icon.large-heading,
+	.icon.h1 {
+	  background-image: url('../../public/source/icons/type-h1.svg');
+	}
+
+	.icon.small-heading,
+	.icon.h2 {
+	  background-image: url('../../public/source/icons/type-h2.svg');
+	}
+
+	.icon.bullet-list,
+	.icon.ul {
+	  background-image: url('../../public/source/icons/list-ul.svg');
+	}
+
+	.icon.numbered-list,
+	.icon.ol {
+	  background-image: url('../../public/source/icons/list-ol.svg');
+	}
+
+	.icon.quote {
+	  background-image: url('../../public/source/icons/chat-square-quote.svg');
+	}
+
+	.icon.code {
+	  background-image: url('../../public/source/icons/code.svg');
+	}
+
+	i.bold {
+	  background-image: url('../../public/source/icons/type-bold.svg');
+	}
+
+	i.italic {
+	  background-image: url('../../public/source/icons/type-italic.svg');
+	}
+
+	i.underline {
+	  background-image: url('../../public/source/icons/type-underline.svg');
+	}
+
+	i.strikethrough {
+	  background-image: url('../../public/source/icons/type-strikethrough.svg');
+	}
+
+	i.code {
+	  background-image: url('../../public/source/icons/code.svg');
+	}
+
+	i.link {
+	  background-image: url('../../public/source/icons/link.svg');
+	}
+
+	i.left-align {
+	  background-image: url('../../public/source/icons/text-left.svg');
+	}
+
+	i.center-align {
+	  background-image: url('../../public/source/icons/text-center.svg');
+	}
+
+	i.right-align {
+	  background-image: url('../../public/source/icons/text-right.svg');
+	}
+
+	i.justify-align {
+	  background-image: url('../../public/source/icons/justify.svg');
+	}
+}

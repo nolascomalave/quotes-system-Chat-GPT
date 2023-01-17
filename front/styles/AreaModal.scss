@@ -1,0 +1,131 @@
+@import 'vars';
+
+.area-modal{
+    .view-modal__container{
+        background-color: white;
+
+        &__section{
+            color: lighten($secondary, 10);
+            &__cover-page{
+                position: relative;
+                width:100%;
+                height: 10em;
+                margin-bottom: 1em;
+
+                &.border{
+                    border: .1em dashed darken($fond, 10);
+                }
+
+                /* &:hover{
+                    .view-modal__container__cover-page__header{
+                        height: 2.2em;
+                    }
+                } */
+            }
+
+            .title{
+                margin-bottom: .2em;
+                text-align: center;
+            }
+
+            .code{
+                margin-bottom: .5em;
+                font-size: .8em;
+                font-weight: bold;
+                text-align: center;
+                color: rgba($primary, .75);
+            }
+
+            .action-buttons{
+                width: 100%;
+                max-width: 4em;
+                margin: auto;
+                margin-bottom: 1.6em;
+
+                .action{
+                    padding: .25em;
+                    font-size: inherit;
+                    color: darken($fond, 30);
+                    outline: none;
+                    border: .1em solid darken($fond, 30);
+                    border-radius: 50%;
+                    background-color: transparent;
+                    transition-duration: .25s;
+
+                    &.delete:hover, &.delete:focus{
+                        color: $light-error-color;
+                        border-color: $light-error-color;
+                    }
+
+                    &.edit:hover, &.edit:focus{
+                        color: $primary;
+                        border-color: $primary;
+                    }
+                }
+            }
+
+            .inf{
+                margin-bottom: 1em;
+                word-break: break-word;
+
+                .title{
+                    font-size: .8em;
+                    text-transform: uppercase;
+                    text-indent: 1em;
+                    color: lighten($secondary, 40);
+                }
+
+                .data{
+                    text-indent: 1em;
+                    font-style: italic;
+
+                    /* &.none{
+
+                    } */
+                }
+
+                .chip{
+                    margin-right: .5em;
+                    margin-top: .25em;
+
+                    &:last-child{
+                        margin: 0;
+                    }
+                }
+
+                &.process{
+                    .processed{
+                        margin-bottom: .5em;
+                        font-size: .7em;
+                        line-height: 1.1;
+                        font-style: italic;
+                        color: lighten($secondary, 40);
+                    }
+
+                    &:last-child{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:350px){
+    .area-modal{
+        .view-modal__container{
+            &__section{
+                .inf.process{
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: space-evenly;
+                    margin-top: .5em;
+
+                    .processed{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}

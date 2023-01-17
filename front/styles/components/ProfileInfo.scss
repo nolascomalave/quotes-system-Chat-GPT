@@ -1,0 +1,157 @@
+@import '../vars';
+
+.profile-info {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	width: 100%;
+	gap: 1em;
+
+	&__principal, &__data {
+		box-shadow: 0 0 .5em darken($fond, 10);
+		border-radius: .4em;
+		background-color: white;
+	}
+
+	&__principal {
+		display: flex;
+		flex-wrap: wrap;
+		align-content: space-between;
+		max-width: 500px;
+		width: 100%;
+		text-align: center;
+
+		&__image {
+			width: 100%;
+			padding: 1em;
+			border-radius: inherit;
+
+			&__alternative {
+				width: 7.5em;
+				height: 7.5em;
+				margin: auto;
+				border-radius: inherit;
+
+				svg{
+		            font-size: 7.5em;
+		            color: $primary;
+		            // filter: drop-shadow(0 0 .05em rgba(black, .25));
+		        }
+			}
+
+			&__primary {
+				width: 7.5em;
+				height: 7.5em;
+				margin: auto;
+				object-fit: cover;
+				object-position: center;
+				border-radius: inherit;
+			}
+
+			&__skeleton_img {
+				margin: auto;
+			}
+
+			&__skeleton_title {
+				margin: auto;
+				margin-top: 0.5em;
+			}
+
+			&__skeleton_subtitle {
+				margin: auto;
+				margin-top: -0.5em;
+			}
+
+			&__title{
+				margin-top: 0.5em;
+				color: $secondary;
+			}
+
+			&__subtitle{
+				font-size: .8em;
+				color: lighten($secondary, 30);
+			}
+		}
+
+		&__resume {
+			width: 100%;
+
+			&__actions {
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				width: 100%;
+				color: lighten($secondary, 30);
+
+				&__title {
+					width: 100%;
+					padding-left: 0.5em;
+					text-align: left;
+				}
+
+				&__skeleton_buttons {
+					margin: -0.15em 1em 0 0;
+				}
+
+				&__button {
+					color: lighten($secondary, 30);
+				}
+
+				.css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+					min-width: auto;
+					padding: .25em;
+					width: auto;
+				}
+			}
+		}
+	}
+
+	&__data {
+		padding: 1em;
+		padding-top: 0.5em;
+		color: lighten($secondary, 30);
+
+		&__title {
+			font-size: 0.8em;
+			font-weight: bold;
+			color: lighten($secondary, 50);
+		}
+
+		&__form {
+			display: inline-flex;
+			flex-wrap: wrap;
+			gap: 2em;
+			margin-top: 0.75em;
+
+			&__skeleton_cell {
+				margin: -0.275em;
+			}
+
+			&__cell {
+				display: flex;
+				flex-flow: row wrap;
+				gap: 0.3em;
+
+				.title {
+					text-decoration: underline;
+				}
+
+				.value {
+					font-weight: bold;
+				}
+
+				&.all {
+					width: 100%;
+				}
+			}
+		}
+
+
+	}
+}
+
+@media (min-width: 1200px){
+	.profile-info {
+		flex-flow: initial;
+	}
+}

@@ -1,0 +1,38 @@
+{
+  "name": "quotes-system-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "babel-node src/index.js",
+    "dev": "nodemon --exec npm run serve",
+    "build": "babel src --out-dir build",
+    "start": "node build/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^4.6.0",
+    "cookie": "^0.4.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^11.0.0",
+    "express": "^4.17.2",
+    "express-session": "^1.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.6",
+    "multer": "^1.4.4",
+    "nodemailer": "^6.8.0",
+    "sharp": "^0.29.3",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.7",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.8",
+    "nodemon": "^2.0.15"
+  }
+}

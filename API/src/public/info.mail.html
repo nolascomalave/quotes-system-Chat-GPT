@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Quoting System</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+      :root {
+        --main-orange-color: rgb(253,102,0);
+        --main-light_black-color: rgb(51,51,51);
+      }
+
+      * {
+        margin:  0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      .main{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        /*height: 600px;*/
+        max-height: 100%;
+        margin: auto;
+        max-width: 800px;
+        font-size: 6.3751068vw;
+      }
+
+      .cuerpo {
+        flex-shrink: 1;
+        height: 100%;
+        margin-bottom: 4em;
+      }
+
+      .cabeza, .cuerpo, .pie {
+        padding: 1em;
+      }
+
+      .cabeza {
+        display: flex;
+        flex-shrink: 0;
+        text-align: left;
+        color: white;
+        background-color: #333333;
+        /*border-bottom: 0.5em solid rgb(253,102,0);*/
+        background-color: #333333;
+        background-size:1em 1em;
+      }
+
+      .cabeza .logo {
+        flex-shrink: 0;
+        margin-right: 1em;
+        width: 4em;
+        height: 4em;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      .cabeza h1 {
+        color: #FD6600;
+      }
+
+      .pie {
+        font-size: 0.75em;
+        text-align: center;
+        border-top: 0.125em solid #FD6600;
+      }
+
+      .pie p {
+        margin-bottom: 1em;
+      }
+
+      .pie p::last-child {
+        flex-shrink: 0;
+        margin: 0;
+      }
+
+
+      /*------------------------------------------------------------------------------------------------
+      -- Media Queries ---------------------------------------------------------------------------------
+      ------------------------------------------------------------------------------------------------*/
+      @media (min-width: 250px){
+        .main{
+          font-size: 12pt;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="cabeza">
+        <img class="logo" alt="Logo" src="https://raw.githubusercontent.com/nolascomalave/public-files/main/logo.png">
+        <div class="text">
+          <h1>{{Title}}</h1>
+          <h4>{{Subtitle}}</h4>
+        </div>
+      </div>
+  
+      <div class="cuerpo">
+        {{HTML}}
+      </div>
+  
+      <div class="pie">
+        <p>We have sent you this email to inform you of important changes in your account.</p>
+        <p>© 2022 New Evolution LLC, 1561 Africa Rd, Galena Ohio 43021, USA</p>
+      </div>
+    </div>
+  </body>
+</html>

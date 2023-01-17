@@ -1,0 +1,32 @@
+@import 'vars';
+
+.css-bdhsul-MuiTypography-root-MuiDialogTitle-root{
+    padding: 1em 1.5em;
+    font-size: 1.1em;
+    line-height: 1.25;
+    color:$secondary;
+}
+
+.dialog{
+    font-size:inherit;
+    color: $secondary;
+
+    button{
+        padding: .25em;
+        margin-right: .5em;
+        font-size: 1.1em;
+        text-transform: uppercase;
+        color: $primary;
+        background-color: transparent;
+        border:none;
+
+        &:active{
+            color:white;
+            background-color: $primary;
+        }
+
+        &:last-child{
+            margin:0;
+        }
+    }
+}

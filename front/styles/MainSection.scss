@@ -1,0 +1,53 @@
+@import 'vars';
+
+.main{
+    position: relative;
+    padding:.75em;
+    border-top: .05em solid transparent;
+
+    .message{
+        display:none;
+        max-width: 100%;
+        font-size: 1.5em;
+        font-weight: bold;
+        text-align: center;
+        color: darken($fond, 20);
+
+        &.error{
+            opacity:.8;
+            text-shadow: none;
+            color: darken(red, 20);
+        }
+
+        &.show{
+            display: block;
+        }
+    }
+
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0%;
+        right: .75em;
+        left:.75em;
+        height: .05em;
+        border-radius: .05em;
+        background-color: darken($fond, 5);
+    }
+
+    &.hide{
+        display: none;
+    }
+}
+
+@media (min-width: 250px){
+	.main{
+        padding:1.5em;
+    }
+}
+
+@media (min-width: 600px){
+	.main .message{
+        font-size: 2em;
+    }
+}

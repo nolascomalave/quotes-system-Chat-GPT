@@ -1,0 +1,83 @@
+@import 'vars';
+
+.upload-file{
+    display:inline-flex;
+    flex-direction: column;
+    align-items: center;
+    max-width:200px;
+
+    input{
+        width:0;
+        height:0;
+        opacity: 0;
+        outline: none;
+
+        &:focus, &:hover{
+            & + .upload-file__label-content{
+                .upload-file__label-content__label{
+                    color:$primary;
+                    outline: .025em dashed $primary;
+                }
+            }
+        }
+    }
+
+    &__label-content{
+        display: inline-block;
+        position: relative;
+        margin-bottom: .25em;
+
+        &__label{
+            cursor:pointer;
+            width: 1.3em;
+            height: 1.3em;
+            font-size: 2.5em;
+            color: $secondary;
+            border-radius: 50%;
+            transition-duration: .25s;
+
+            &.active{
+                color:$primary;
+            }
+        }
+
+        &__clear{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 1.75em;
+            height: 1.75em;
+            font-size: .8em;
+            color:$error-color;
+            outline: none;
+            border-radius: 50%;
+            border:0.05em solid $error-color;
+            background-color: transparent;
+            opacity: .4;
+
+            &:hover, &:focus{
+                opacity: 1;
+            }
+        }
+    }
+
+    &__files-list{
+        width: 100%;
+        font-size: .8em;
+
+        li{
+            display: -webkit-box;
+            width: 100%;
+            overflow: hidden;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+
+        &.hide{
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+@import 'vars';
+
+.profile-menu{
+    .css-aqqxug-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper .MuiAvatar-root{
+        width: 1.8em;
+        height: 1.8em;
+        margin: 0;
+    }
+
+    .profile-list-button{
+        display: flex;
+        align-items: center;
+        min-width: 250px;
+        padding: .5em;
+        font-size: inherit;
+        color: $secondary;
+        text-decoration: none;
+        border:none;
+        background-color: transparent;
+
+        .MuiAvatar-root{
+            flex-shrink: 0;
+        }
+
+        &.icon svg{
+            width: 2em;
+            height: 2em;
+            color: lighten($secondary, 20);
+        }
+
+        p{
+            padding-left: .5em;
+            font-size: 1.2em;
+        }
+    }
+}
+
+.css-6hp17o-MuiList-root-MuiMenu-list{
+    padding:0;
+}

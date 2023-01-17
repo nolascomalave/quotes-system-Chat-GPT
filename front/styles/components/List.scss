@@ -1,0 +1,188 @@
+@import '../vars';
+
+.table-list {
+	width: 100%;
+	font-family: inherit;
+	overflow: auto;
+	border-radius: .25em;
+	box-shadow: 0 0 .5em darken($fond, 7.5);
+	color: darken($fond, 40);
+	background-color: white;
+
+	.left{
+		text-align: left;
+	}
+
+	.right{
+		text-align: right;
+	}
+
+	.center{
+		text-align: center;
+	}
+
+	table, &__body__message {
+		min-width: 580px;
+	}
+
+	table{
+		width: 100%;
+		border-collapse:collapse;
+		border: none;
+		background-color: inherit;
+
+		thead {
+			position: relative;
+			border-bottom: 1px solid darken($fond, 5);
+			background-color: white;
+
+			th {
+				position: sticky;
+				top: 0;
+				text-transform: uppercase;
+				z-index: 1;
+				background-color: darken(white, 5);
+
+				.cell-div {
+					box-shadow: 0 1px 0 darken($fond, 5);
+
+					&.table-list__check-list{
+						box-shadow: none;
+					}
+				}
+
+				&:before {
+					content: '';
+					position: absolute;
+					top: 100%;
+					right: 0;
+					left: 0;
+					height: 1px;
+					background-color: darken($fond, 5);
+				}
+			}
+		}
+
+		th, td {
+			border-left: 1px solid darken($fond, 5);
+
+			&:first-child {
+				border-left: none;
+			}
+		}
+
+		tr, th {
+			&.selected{
+		        background-color: lighten($primary, 42);
+		        
+		        & td {
+		        	border-color: lighten($primary, 38);
+		        }
+		    }
+
+		    &.selected:nth-child(even){
+		       background-color: lighten($primary, 40);
+		    }
+		}
+
+		tr:nth-child(2n+2) {
+			background-color: rgba(0,0,0, .05);
+		}
+
+		th, td .cell-div, td .editable {
+			padding: 0.5em 0.25em;
+			font-size: inherit;
+			font-family: inherit;
+		}
+
+		th, td {
+			vertical-align: middle;
+			align-content: center;
+			align: middle;
+			/*display: flex;
+			align-items: center;
+			justify-content: center;*/
+		}
+
+		td {
+			&.button {
+				padding: 0;
+			}
+
+			.editable {
+				&:focus {
+					text-align: left;
+					color: black;
+					background-color: white;
+				}
+			}
+
+			.MuiButtonBase-root {
+				width: 100%;
+				font-size: inherit;
+				height: 2.35em;
+				padding: 0.5em 0.25em;
+				vertical-align: middle;
+				text-align: center;
+				border-radius: none;
+				border: none;
+				text-transform: none;
+			}
+		}
+
+		.table-list__body__row_column .cell-div, .table-list__body__row_column .editable {
+			width: 100%;
+			outline: none;
+			border: none;
+			background-color: transparent;
+			color: inherit;
+		}
+
+
+		td:has(> .pointable), td:has(> .editable) {
+			&:hover {
+				background-color: lighten($primary, 40);
+			}
+		}
+
+		/*.editable, .pointable {
+			&:hover {
+				background-color: lighten($primary, 40);
+			}
+		}*/
+
+		tr.selected td input[type=text]:focus {
+			background-color: white;
+		}
+
+		tfoot {
+			tr {
+				position: sticky;
+				bottom: 0;
+				z-index: 1;
+				box-shadow: 0 -1px 0 darken($fond, 5);
+				background-color: darken(white, 5);
+			}
+		}
+
+		/*td:nth-child(2n+1) {
+			background-color: rgba(0,0,0,0.05);
+		}*/
+	}
+
+	&__header__column.table-list__check-list {
+		width: 4em;
+	}
+
+	&__body__row__column.table-list_check-list{
+		padding: .75em 0.25em;
+	}
+
+	&__body__message {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 4em;
+	}
+}

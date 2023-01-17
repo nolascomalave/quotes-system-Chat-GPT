@@ -1,0 +1,65 @@
+.list-menu-links{
+    border-bottom: .05em solid darken($light-grey, 15);
+
+    .MuiListItemButton-root{
+        display: block;
+        width: 100%;
+    }
+
+    .link{
+        display: block;
+    }
+
+    .mobile-menu-link, .close-session-mobile-menu{
+        display: flex;
+        width:100%;
+        padding: .5em 1em;
+        font-size: 1.1em;
+        color: $primary;
+        //border-bottom: .05em solid darken($light-grey, 15);
+
+        .MuiSvgIcon-root{
+            flex-shrink: 0;
+            width: 1.25em;
+            height: 1.25em;
+        }
+
+        p{
+            margin-left: 1em;
+            font-weight: bold;
+            color: lighten($secondary, 15);
+        }
+
+        /* &:last-child{
+            border:none;
+        } */
+
+        &.active{
+            position:relative;
+            background-color: rgba($primary,.1);
+
+            &:before{
+                content:'';
+                position:absolute;
+                top:0;
+                right: 0;
+                bottom:0;
+                width: .3em;
+                background-color: $primary;
+            }
+        }
+    }
+
+    .close-session-mobile-menu{
+        border: none;
+        background-color: transparent;
+
+        p{
+            font-size: .975em;
+        }
+    }
+
+    &:last-child{
+        border:none;
+    }
+}

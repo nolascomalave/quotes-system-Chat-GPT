@@ -1,0 +1,183 @@
+@import '../vars';
+
+.areas-list {
+	margin-bottom: 2em;
+	color: lighten($secondary, 20);
+
+	&__header {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		padding: 0.25em;
+		color: inherit;
+
+		&__title {
+			width: 100%;
+			font-size: 1.25em;
+			text-transform: uppercase;
+		}
+
+		&__actions {
+			display: flex;
+			gap: 1em;
+			align-items: center;
+			flex-shrink: 0;
+			color: inherit;
+
+			&__btn {
+				font-size: 1.25em;
+				opacity: 0.5;
+				color: inherit;
+
+				&:hover{
+					opacity: 1;
+				}
+
+				&.add {
+					color: $primary;
+
+					&:hover {
+						background-color: rgba($primary, 0.05);
+					}
+				}
+
+				&.delete {
+					color: $error-color;
+
+					&:hover {
+						background-color: rgba($error-color, 0.05);
+					}
+				}
+
+				&:disabled {
+					color: inherit;
+				}
+			}
+		}
+	}
+
+	&__body {
+		max-width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+		padding: .25em;
+		color: inherit;
+		box-shadow: 0 0 .5em darken($fond, 7.5);
+		background-color: white;
+
+		&__message {
+			padding: .8em;
+			font-size: 1.25em;
+			font-weight: bold;
+			text-align: center;
+			color: lighten($secondary, 50);
+		}
+
+		&__item {
+			max-width: 100%;
+			overflow: auto;
+
+			&__container {
+				max-width: 100%;
+				overflow: auto;
+				padding: 0.5em;
+				border: 0.0625em solid darken($fond, 15);
+				overflow: auto;
+
+				&__title {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					gap: .5em;
+					padding: 0 .75em;
+					font-size: 1.25em;
+					color: lighten($secondary, 20);
+
+					&__type {
+						font-size: .6em;
+					}
+				}
+
+				&__principal {
+					max-width: 100%;
+					color: inherit;
+
+					&__parents {
+						font-size: .8em;
+						color: lighten($secondary, 50);
+					}
+
+					&__actions {
+						display: flex;
+						float: right;
+						font-size: .8em;
+						padding: 0 0 .5em .5em;
+
+						* {
+							color: inherit;
+						}
+					}
+				}
+
+				&__services {
+					overflow: auto;
+					clear: both;
+					padding-top: .5em;
+					margin-top: 1.5em;
+					border-top: .0625em solid darken($fond, 5);
+
+					&__header {
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+
+						&__title {
+							width: 100%;
+							font-size: 1.25em;
+							text-transform: uppercase;
+						}
+
+						&__buttons {
+							display: flex;
+							gap: 1em;
+							align-items: center;
+							flex-shrink: 0;
+							color: inherit;
+
+							&__btn {
+								font-size: 1.25em;
+								opacity: 0.5;
+								color: inherit;
+
+								&:hover{
+									opacity: 1;
+								}
+
+								&.add.MuiButtonBase-root {
+									color: $primary !important;
+
+									&:hover {
+										background-color: rgba($primary, 0.05);
+									}
+								}
+
+								&.delete {
+									color: $error-color;
+
+									&:hover {
+										background-color: rgba($error-color, 0.05);
+									}
+								}
+
+								&:disabled {
+									color: inherit;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

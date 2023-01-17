@@ -1,0 +1,75 @@
+@import 'vars';
+
+.checkbox{
+    .container{
+        display: flex;
+        align-items: center;
+
+        input{
+            width:0;
+            height: 0;
+            opacity:0;
+
+            &:checked + label{
+                background-color: $primary;
+
+                &::before{
+                    transform: translateX(1.5em);
+                }
+            }
+
+            &:focus + label:before,
+            &:hover + label:before{
+                border-color: darken($primary, 10);
+            }
+        }
+
+        label{
+            position: relative;
+            display: inline-block;
+            width: 2.5em;
+            height: 1.25em;
+            margin: .175em .25em;
+            margin-right: .75em;
+            border-radius: 1.25em;
+            background-color: darken($fond, 30);
+            transition-duration: .25s;
+            cursor: pointer;
+
+            &::before{
+                content:'';
+                position: absolute;
+                top: -.125em;
+                left: -.25em;
+                width: 1.5em;
+                height: 1.5em;
+                border-radius: 1.5em;
+                border: .05em solid darken($fond, 25);
+                background-color: white;
+                transition-duration: inherit;
+            }
+        }
+
+        span{
+            cursor: pointer;
+        }
+
+        .required{
+            color:$error-color;
+        }
+    }
+
+    p{
+        display: none;
+        width:100%;
+        padding: .25em;
+        font-size: .85em;
+        font-weight: bold;
+        text-align: left;
+        color:$error-color;
+    }
+
+    &.label-error p{
+        display:block;
+    }
+}

@@ -1,0 +1,125 @@
+.products-page{
+    &__section{
+        padding:.75em;
+    }
+
+    .products-list{
+        /* max-width: 1000px;
+        margin:auto; */
+
+        .wrapper{
+            border-radius: .25em;
+            overflow: auto;
+            box-shadow: 0 0 .5em darken($fond, 7.5);
+            background-color: white;
+        }
+
+        &__header{
+            display: flex;
+            align-items: center;
+            min-width: 59.375em;
+            padding-left: .15em;
+            text-transform: uppercase;
+            color:darken($fond, 40);
+            background-color: rgba(0,0,0, .05);
+
+            .check{
+                padding: 1em;
+                flex-shrink: 0;
+            }
+
+            .inf{
+                width: 40%;
+                padding: 0 1em;
+                overflow:hidden;
+                white-space:nowrap;
+                text-overflow: ellipsis;
+
+                &:last-child{
+                    width: 10em;
+                }
+            }
+
+            .price{
+                flex-shrink: 0;
+                width: 10%;
+            }
+            .stock{
+                width: 15%;
+            }
+        }
+
+        .options{
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1em 0;
+            border-radius: .25em .25em 0 0;
+            //background-color: rgba(0,0,0, .05);
+
+            .option-button{
+                display: flex;
+                align-items: center;
+                padding: .25em .5em;
+                font-size: inherit;
+                font-weight: bold;
+                text-transform: uppercase;
+                color:darken($fond, 10);
+                outline:none;
+                border-radius: .25em;
+                border:.1em solid darken($fond, 10);
+                background-color: transparent;
+                transition-duration: .25s;
+
+                .MuiSvgIcon-root{
+                    width: 1em;
+                    height: 1em;
+                    margin-right: .5em;
+                    font-size: 1.25em;
+                }
+
+                &.new{
+                    color:white;
+                    border-color: $primary;
+                    background-color: $primary;
+
+                    span{
+                        margin-bottom: .1em;
+                    }
+
+                    &:hover, &:focus{
+                        background-color: darken($primary, 5);
+                        border-color: darken($primary, 5);
+                    }
+                }
+
+                &.delete{
+                    color:white;
+                    border-color: $light-error-color;
+                    background-color: $light-error-color;
+
+                    &:hover, &:focus{
+                        background-color: lighten($error-color, 10);
+                        border-color: lighten($error-color, 10);
+                    }
+                }
+            }
+        }
+    }
+
+    .loader-section{
+        padding:2em;
+    }
+}
+
+@media (min-width: 250px){
+	.products-page{
+        &__section{
+            padding:1.5em;
+        }
+
+        &__header{
+            min-width: 950px;
+        }
+    }
+}

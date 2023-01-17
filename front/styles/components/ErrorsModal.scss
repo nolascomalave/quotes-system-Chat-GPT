@@ -1,0 +1,82 @@
+@import '../vars';
+
+.errors-modal {
+    display: flex;
+    flex-direction: column;
+    padding: 0 .5em;
+    padding-bottom: 1em;
+    color: white;
+    border-top: .125em solid $error-color;
+    border-bottom: .125em solid $error-color;
+    border-radius: .25em;
+    background-color: darken($secondary, 5);
+
+    &__header {
+        position: relative;
+        display: inherit;
+        align-items: center;
+        flex-shrink: 0;
+        gap: .5em;
+        padding: .5em 0;
+        border-bottom: .0625em solid transparent;
+
+        &__title {
+            width: 100%;
+        }
+
+        &__close {
+            flex-shrink: 0;
+            color: white;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: .0625em;
+            border-radius: .0625em;
+            background-color: white;
+            opacity: .5;
+        }
+    }
+
+    &__title {
+        flex-shrink: 0;
+        padding: 1.25em 0;
+        color: rgba(255, 80, 80);
+    }
+
+    &__list, &__sublist__list {
+        &__item {
+            display: flex;
+            align-items: flex-start;
+            gap: .25em;
+            margin-bottom: .5em;
+            color: darken(white, 15);
+
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+
+    &__sublist {
+        padding: 0 .5em;
+        margin-bottom: 1em;
+
+        &__title {
+            margin-bottom: .25em;
+            color: rgba(255, 80, 80);
+        }
+
+        &:last-child {
+            margin: 0;
+        }
+
+        &:first-child {
+            margin-top: 1.25em;
+        }
+    }
+}

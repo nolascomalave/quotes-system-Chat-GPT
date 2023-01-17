@@ -1,0 +1,131 @@
+@import '../vars';
+
+.input-audio-modal {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	padding: 1em;
+
+	* {
+		color: $secondary;
+	}
+
+	&__header {
+		flex-shrink: 0;
+		display: inherit;
+		justify-content: flex-end;
+		width: 100%;
+	}
+
+	&__body {
+		display: inherit;
+		flex-direction: inherit;
+		width: 100%;
+		height: 100%;
+
+		&__counter {
+			padding: 1em;
+			font-size: 3em;
+			text-align: center;
+		}
+
+		&__animation {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+
+			&__bars {
+				display: inherit;
+				align-items: center;
+				gap: 0.25em;
+				height: 4.375em;
+				overflow: hidden;
+
+				&__bar {
+					flex-shrink: 0;
+					background: $primary;
+					bottom: 0.0625em;
+					height: 0.1875em;
+					width: 0.625em;
+					//margin: 0px .25em;
+					border-radius: 0.3125em;
+					transition-duration: 600ms;
+
+					&.animate {
+						animation: sound 0ms -600ms linear infinite alternate;
+					}
+
+					&:nth-child(1)  { left: 0.0625em; animation-duration: 711ms; }
+					&:nth-child(2)  { left: 0.9375em; animation-duration: 649.5ms; }
+					&:nth-child(3)  { left: 1.8125em; animation-duration: 610.5ms; }
+					&:nth-child(4)  { left: 2.6875em; animation-duration: 687ms; }
+					&:nth-child(5)  { left: 3.5625em; animation-duration: 600ms; }
+					&:nth-child(6)  { left: 4.4375em; animation-duration: 640.5ms; }
+					&:nth-child(7)  { left: 5.3125em; animation-duration: 661.5ms; }
+					&:nth-child(8)  { left: 6.1875em; animation-duration: 628.5ms; }
+					&:nth-child(9)  { left: 7.0625em; animation-duration: 730.5ms; }
+					&:nth-child(10) { left: 7.9375em; animation-duration: 663ms; }
+				}
+			}
+		}
+
+		&__actions {
+			flex-shrink: 0;
+			display: inherit;
+			align-items: center;
+			justify-content: space-evenly;
+
+			.MuiButtonBase-root {
+				border-radius: 50%;
+
+				&.play {
+
+				}
+			}
+
+			&__button.play{
+				padding: 0.5em;
+				border: 0.125em solid $primary;
+				background-color: white;
+				transition-duration: 0.5s;
+
+				* {
+					color: $primary;
+				}
+
+				&.active {
+					background-color: $primary;
+
+					* {
+						color: white;
+					}
+				}
+			}
+		}
+
+		// &__
+	}
+}
+
+@keyframes sound {
+    0% {
+		opacity: .35;
+		height: 0.1875em;
+    }
+    100% {
+		opacity: 1;
+		height: 4.375em;        
+    }
+}
+
+/*@keyframes translate {
+    0% {
+		margin-left: 0;
+    }
+
+    100% {
+		margin-left: -0.875em;      
+    }
+}*/

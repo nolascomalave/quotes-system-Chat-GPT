@@ -1,0 +1,255 @@
+@import '../vars';
+
+#QuoteAdd {
+	padding: 1em;
+	padding-bottom: 3.5em;
+	overflow: auto;
+
+	.css-4reedn-MuiSpeedDial-root {
+		position: fixed;
+		bottom: 1em;
+		right: 1em;
+		z-index: 100;
+	}
+
+	.css-118zhtq-MuiButtonBase-root-MuiFab-root-MuiSpeedDial-fab {
+		font-size: 1.5em;
+		width: 2.35em;
+		height: 2.35em;
+		line-height: 1;
+		background-color: $secondary;
+		box-shadow: 0 .2em .4em -0.12em rgb(0 0 0 / 20%),
+					0 0.4em 6em 0px rgb(0 0 0 / 14%),
+					0px 0.12em 1.1em 0 rgb(0 0 0 / 12%);
+	}
+
+	.css-1e2cad8-MuiButtonBase-root-MuiFab-root-MuiSpeedDialAction-fab {
+		font-size: 1.25em;
+	}
+
+	.css-13y48ld-MuiSpeedDialAction-staticTooltipLabel {
+		font-size: 0.75em;
+		padding: 0.3em 0.75em;
+		line-height: 1.25;
+		border-radius: 0.3em;
+	}
+
+	// Material Button:
+	.css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+		display: flex;
+		gap: 0.25em;
+		align-items: center;
+		min-width: auto;
+
+		p {
+			font-size: 0.75em;
+		}
+	}
+
+	.list_items{
+		margin-bottom: 2em;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&__header {
+			display: flex;
+			align-items: center;
+			width: 100%;
+			padding: 0.25em;
+			color: lighten($secondary, 20);
+
+			&__title {
+				width: 100%;
+				font-size: 1.25em;
+				text-transform: uppercase;
+			}
+
+			&__buttons {
+				display: flex;
+				gap: 1em;
+				align-items: center;
+				flex-shrink: 0;
+				color: inherit;
+
+				&__btn {
+					font-size: 1.25em;
+					opacity: 0.5;
+					color: inherit;
+
+					&:hover{
+						opacity: 1;
+					}
+
+					&.add {
+						color: $primary;
+
+						&:hover {
+							background-color: rgba($primary, 0.05);
+						}
+					}
+
+					&.delete {
+						color: $error-color;
+
+						&:hover {
+							background-color: rgba($error-color, 0.05);
+						}
+					}
+
+					&:disabled {
+						color: inherit;
+					}
+				}
+			}
+		}
+	}
+
+	.save-quote-button {
+		position: fixed;
+		right: 3.5em;
+		bottom: .675em;
+		padding: 0.675em;
+		color: white;
+		text-shadow: 0 0 .25em black;
+		border-radius: 50%;
+		background-color: $secondary;
+		/*box-shadow: 0 0 1em 0 $primary,
+					0 0 0 0.25em rgba($primary, 0.25),
+					0 0 0 0.5em rgba($primary, 0.25),
+					0 0 0 0.75em rgba($primary, 0.25);*/
+		box-shadow: 0 .2em .4em -0.12em rgb(0 0 0 / 20%),
+					0 0.4em 6em 0px rgb(0 0 0 / 14%),
+					0px 0.12em 1.1em 0 rgb(0 0 0 / 12%);
+		opacity: .5;
+		transition: .25s;
+		z-index: 100;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	// CardsInfo: --------------------------------------------------------------------------------
+	.detail-container {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		gap: 2em;
+		justify-content: space-between;
+		margin-bottom: 2em;
+
+		&__detail {
+			flex-grow: 1;
+			max-width: 530px;
+			width: 100%;
+			margin: 0 auto;
+			color: lighten($secondary, 30);
+			box-shadow: 0 0 .5em darken($fond, 7.5);
+			background-color: white;
+
+			&__header {
+				position: relative;
+				padding: 0.5em;
+				gap: 1em;
+				font-size: 1.25em;
+				text-transform: uppercase;
+				border-bottom: 0.075em solid transparent;//darken($fond, 10);
+
+				&::before {
+					content: '';
+					position: absolute;
+					font-size: 0.64em;
+					top: 100%;
+					right: .5em;
+					left: .5em;
+					height: 0.075em;
+					background-color: darken($fond, 10);
+				}
+
+				&.bettwenFlex {
+					&__title {
+						width: 100%;
+					}
+				}
+
+				&__title{
+					padding: 0.5em 0;
+				}
+
+				&__buttons {
+					flex-shrink: 0;
+					display: flex;
+					font-size: 0.75em;
+
+					.MuiButtonBase-root {
+						color: inherit;
+					}
+				}
+			}
+
+			&__body {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1em;
+				justify-content: space-between;
+				padding: 1em;
+				padding-top: .5em;
+
+				&__input-container {
+					min-width: 100%;
+				}
+			}
+		}
+	}
+}
+
+@keyframes audio-wave {
+	0% {
+		box-shadow: 0 0 1em 0 $primary;
+	}
+
+	25% {
+		box-shadow: 0 0 1em 0 $primary,
+					0 0 0 0.25em rgba($primary, 0.25);
+	}
+
+	50% {
+		box-shadow: 0 0 1em 0 $primary,
+					0 0 0 0.25em rgba($primary, 0.25),
+					0 0 0 0.5em rgba($primary, 0.25);
+	}
+
+	75% {
+		box-shadow: 0 0 1em 0 $primary,
+					0 0 0 0.25em rgba($primary, 0.25),
+					0 0 0 0.5em rgba($primary, 0.25),
+					0 0 0 0.75em rgba($primary, 0.25);
+	}
+
+
+
+	100% {
+		box-shadow: 0 0 1em 0 $primary,
+					0 0 0 0.25em rgba($primary, 0.25),
+					0 0 0 0.5em rgba($primary, 0.25),
+					0 0 0 0.75em rgba($primary, 0.25);
+	}
+/*effect is to animate the height of each span from 5px to 30px*/
+/*translateY makes Y axis move down to give the effect that it is growing from the center*/
+}
+
+
+
+@media (min-width: 473px){
+	#QuoteAdd {
+		.detail-container__detail__body__input-container {
+			min-width: calc(50% - 1em);
+
+			&.all {
+				min-width: 100%;
+			}
+		}
+	}
+}

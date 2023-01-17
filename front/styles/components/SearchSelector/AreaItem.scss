@@ -1,0 +1,24 @@
+@import '../../vars';
+
+.area-item_search-selector {
+	&__header {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		color: lighten($secondary, 30);
+
+		&__title {
+			font-weight: bold;
+		}
+
+		&__type {
+			font-size: .8em;
+		}
+	}
+
+	&__footer {
+		font-size: .8em;
+		font-weight: bold;
+		color: darken($fond, 20);
+	}
+}

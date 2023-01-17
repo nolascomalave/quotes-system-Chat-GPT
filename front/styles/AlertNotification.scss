@@ -1,0 +1,103 @@
+@import 'vars';
+
+.alert-notification{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position:fixed;
+    padding: 1em;
+    background-color: transparent;
+    transition-duration: .1s;
+    z-index: 100000;
+
+    .container{
+        max-width: 500px;
+        padding: 1.5em;
+        padding-bottom: 1em;
+        text-align:center;
+        color: white;
+        border-radius: .25em;
+        box-shadow: 0 .25em .5em darken($secondary, 10);
+        background-color: darken($secondary, 5);
+        opacity: 0;
+        transition-duration: .25s;
+        transform: translateY(100%);
+
+        .icon{
+            font-size: 4em;
+            filter: drop-shadow(0 2px 5px lighten(black, 7.5));
+        }
+
+        .input{
+            max-width: 250px;
+            margin:auto;
+        }
+
+        .title{
+            margin-bottom:.25em;
+            font-size: 1.25em;
+            font-weight: bold;
+            text-shadow: 0 0 .25em lighten(black, 10);
+        }
+
+        .message{
+            margin: .5em 0;
+            text-align: left;
+        }
+
+        .buttons{
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 1.5em;
+
+            button{
+                padding: .5em;
+                margin-right: 1em;
+                font-size: .95em;
+                color: darken(white, 5);
+                outline: none;
+                border:transparent;
+                background-color: transparent;
+                transition-duration: .25s;
+
+                &:hover, &:focus{
+                    color:white;
+                    box-shadow: 0 .15em .25em darken($secondary, 7.5);
+                }
+
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+
+        &.success .icon{
+            color: $success-color;
+        }
+
+        &.fail .icon{
+            color: $error-color;
+        }
+
+        &.unauthorized .icon{
+            color:$light-error-color;
+        }
+
+        &.warning .icon{
+            color: $warning-color;
+        }
+    }
+
+    .float-label{
+        text-align: left;
+    }
+}
+
+.alert-notification.active{
+    background-color: rgba(black, .75);
+
+    .container{
+        opacity: 1;
+        transform: none;
+    }
+}

@@ -1,0 +1,108 @@
+@import '../vars';
+
+.areas-form-quote {
+	width: 100%;
+	padding: 1em;
+	border-radius: .25em;
+	background-color: white;
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-bottom: .5em;
+		margin-bottom: 1em;
+		border-bottom: 0.0625em solid darken($fond, 5);
+
+		* {
+			color: $secondary;
+		}
+	}
+
+	&__body {
+		color: $secondary;
+
+		&__parents {
+			padding: .5em;
+			border-radius: .25em;
+			border: .065em solid darken($fond, 10);
+
+			&__header {
+				display: flex;
+				grid-gap: 1em;
+				align-items: flex-start;
+				width: 100%;
+
+				&__title{
+					width: inherit;
+					margin-bottom: .75em;
+					font-weight: bold;
+				}
+
+				&__actions {
+					display: flex;
+					color: $secondary;
+					transition-duration: .25s;
+				}
+			}
+
+			&__list {
+				&__child {
+					display: flex;
+					align-items: flex-start;
+					margin-top: .5em;
+
+					&:first-child {
+						margin-top: 0;
+					}
+
+					.text {
+						width: 100%;
+					}
+
+					.MuiButtonBase-root {
+						flex-shrink: 0;
+					}
+
+					&__subtitle {
+						font-weight: normal;
+						font-size: .8em;
+						font-style: italic;
+					}
+				}
+			}
+		}
+
+		.MuiButtonBase-root {
+			color: inherit;
+		}
+	}
+
+	.MuiButtonBase-root {
+		font-size: 1em;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+
+	&__footer {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		margin-top: 1em;
+
+		.MuiButtonBase-root {
+			color: $primary;
+
+			&, * {
+				transition-duration: .5s;
+			}
+
+			&:hover {
+				background-color: $primary;
+				color: white;
+			}
+		}
+	}
+}

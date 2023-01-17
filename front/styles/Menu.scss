@@ -1,0 +1,121 @@
+#menu{
+    display:none;
+    max-width: 280px;
+    width:80px;
+    flex-direction: column;
+    flex-shrink: 0;
+    overflow:auto;
+
+    &, *{
+        transition-duration: .5s;
+        transition-timing-function: ease;
+    }
+
+    .logo-section{
+        padding:.375em 1em;
+        text-align:center;
+        border-bottom: .05em solid darken($primary, 10);
+        background-color: darken($primary, 5);
+
+        img{
+            display:block;
+            width:3em;
+            height:3em;
+            margin:auto;
+        }
+
+        p{
+            width:0;
+            height:0;
+            font-size: 1.1em;
+            font-weight: bold;
+            color:white;
+            overflow:hidden;
+            transition-duration: .3s;
+            transition-delay: .2s;
+        }
+    }
+
+    .links-section{
+        height:100%;
+        padding: 1em 0;
+        background-image: linear-gradient(to bottom, $primary, darken($primary, 5));
+
+        .link-button{
+            display: flex;
+            align-items: center;
+            padding: .25em .5em;
+            font-size: 1.25em;
+            color:white;
+
+            .MuiSvgIcon-root{
+                width:100%;
+                min-width: 1.2em;
+                min-height: 1.2em;
+                font-size: 1.5em;
+                border-radius: 0;
+            }
+
+            p{
+                width:100%;
+                font-weight: bold;
+                overflow:hidden;
+                transition-duration: .5s;
+            }
+
+            &.active{
+                position:relative;
+                background-color: rgba(0,0,0,.1);
+
+                &:before{
+                    content:'';
+                    position:absolute;
+                    top:0;
+                    right: 0;
+                    bottom:0;
+                    width: .2em;
+                    background-color: white;
+                }
+            }
+        }
+    }
+
+    &.active{
+        width:100%;
+
+        .logo-section{
+            padding:.5em 1em;
+
+            img{
+                width: 4em;
+                height: 4em;
+                margin-bottom: .5em;
+            }
+
+            p{
+                width:auto;
+                height:auto;
+                padding-right: .2em;
+            }
+        }
+
+        .links-section{
+
+            .link-button{
+                .MuiSvgIcon-root{
+                    width:auto;
+                }
+
+                p{
+                    margin-left: .55em;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 600px){
+    #menu{
+        display:flex;
+    }
+}

@@ -1,0 +1,208 @@
+// @import 'vars';
+
+#header{
+    position: sticky;
+    width: 100%;
+    top: 0;
+    flex-shrink: 0;
+    font-size: 1.25em;
+    box-shadow: 0 0 .15em darken($fond, 20);
+    background-color: rgb(245,245,245);
+    z-index: 1000;
+
+    .MuiButton-root{
+        min-width: 2em;
+        min-height: 2em;
+        font-size: 1.5em;
+        color: $secondary;
+        border-radius: 0;
+    }
+
+    .mobile-controlls{
+        display: flex;
+        flex-shrink: 0;
+        font-size: .9em;
+        flex-direction: column-reverse;
+
+        .header-options a{
+            margin-left: .75em;
+
+            img{
+                width:2em;
+                height:2em;
+            }
+        }
+
+        .view-section-selected{
+            display:flex;
+            align-items: center;
+
+            &, *{
+                overflow:hidden;
+                white-space:nowrap;
+                text-overflow: ellipsis;
+            }
+
+            .header-title{
+                width:100%;
+                padding: .5em 1em;
+                font-weight: bold;
+                color: $secondary;
+            }
+        }
+
+        .buttons{
+            display: flex;
+            justify-content: flex-end;
+            flex-shrink: 0;
+
+            .MuiButton-root.active{
+                color:$primary;
+            }
+        }
+
+        .header-title{
+            justify-content: center;
+        }
+    }.mobile-controlls.view-section{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .breadcrumbs{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: .5em 1em;
+        font-weight: bold;
+        color: $secondary;
+
+        &, *{
+            overflow:hidden;
+            white-space:nowrap;
+            text-overflow: ellipsis;
+        }
+
+        ul{
+            width:100%;
+            text-align: center;
+
+            li{
+                display: inline;
+
+                a{
+                    color:lighten($secondary, 25);
+                    text-decoration: none;
+
+                    &:hover{
+                        color:lighten($secondary, 15);
+                    }
+                }
+
+                &::before{
+                    content:' / ';
+                    white-space: pre;
+                    color: $primary;
+                }
+
+                &:first-child::before{
+                    content:none;
+                }
+            }
+        }
+    }
+
+    /* .header-title{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: .5em 1em;
+        font-weight: bold;
+        color: $secondary;
+        overflow:hidden;
+        white-space:nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .breadcrumbs{
+        width: 100%;
+        padding: .25em;
+        font-size: .9em;
+        text-align:center;
+        overflow:hidden;
+        white-space:nowrap;
+        text-overflow: ellipsis;
+
+        nav{
+            display: flex;
+            align-items: center;
+        }
+
+        ol{
+            display: flex;
+            align-items: center;
+            list-style: none;
+
+            li{
+                display:inline-block;
+
+                a{
+                    color:lighten($secondary, 25);
+                    text-decoration: none;
+
+                    &:hover{
+                        color:lighten($secondary, 15);
+                    }
+                }
+
+                &:after{
+                    content:'/';
+                    margin: 0 .5em;
+                    color: $primary;
+                }
+
+                &:last-child{
+                    &:after{
+                        content:none;
+                    }
+                }
+            }
+        }
+    } */
+
+    .no-mobile-controlls{
+        display: flex;
+
+        .logo{
+            flex-shrink: 0;
+            padding: .5em;
+            img{
+                width: 2em;
+                height: 2em;
+            }
+        }
+
+        .startFlex{
+            width: 100%;
+        }
+
+        .profile-button{
+            flex-shrink: 0;
+            margin-right:.525em;
+            font-size:.8em;
+        }
+
+        .notification-button{
+            flex-shrink: 0;
+            border-radius: 50%;
+        }.notification-button.active{
+            color: $primary;
+        }
+    }
+}
+
+@media (min-width: 600px){
+    #header .breadcrumbs ul{
+        text-align: left;
+    }
+}

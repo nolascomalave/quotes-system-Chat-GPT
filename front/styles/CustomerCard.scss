@@ -1,0 +1,87 @@
+@import 'vars';
+
+.customer-card{
+    width:100%;
+    max-width: 300px;
+    padding: 1.5em;
+    color: darken($fond, 40);
+    border-radius: .25em;
+    box-shadow: 0 .25em .5em darken($fond, 10);
+    background-color: white;
+
+    .actions{
+        display:flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .css-2s90m6-MuiAvatar-root, img{
+            width:2.2em;
+            height:2.2em;
+            font-size: 1.25em;
+        }
+
+        img{
+            border-radius: 50%;
+        }
+
+        .action-button{
+            display: flex;
+            font-size: 1.25em;
+            color:darken($fond, 15);
+            outline: none;
+            border-radius: 50%;
+            border:none;
+            background-color: transparent;
+            transition-duration: .25s;
+
+            &.delete{
+                &:hover, &:focus{
+                    color: $light-error-color;
+                }
+            }
+
+            &.edit{
+                &:hover, &:focus{
+                    color: $primary;
+                }
+            }
+        }
+    }
+
+    .name{
+        margin: 1em 0;
+        margin-top: .5em;
+        text-align: center;
+
+        p{
+            color: darken($fond, 15);
+        }
+    }
+
+    ul{
+        font-size: .9em;
+
+        li{
+            width: 100%;
+            margin-bottom: .25em;
+            line-height: 1.2;
+            overflow:hidden;
+            white-space:nowrap;
+            text-overflow: ellipsis;
+
+            span{
+                cursor: pointer;
+            }
+
+            &:last-child{
+                margin:0;
+            }
+        }
+    }
+
+    .ghost{
+        position:absolute;
+        opacity: 0;
+        z-index: -1;
+    }
+}

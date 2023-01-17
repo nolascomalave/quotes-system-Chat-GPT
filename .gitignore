@@ -1,0 +1,16 @@
+node_modules/
+front-old/
+front-old-old/
+old-pages/
+
+API/node_modules/
+API/.env
+API/src/public/areas_photos/
+API/src/public/clients_photos/
+API/src/public/jobs_photos/
+API/src/public/products_photos/
+API/src/public/users_photos/
+
+
+front/node_modules/
+front/.env

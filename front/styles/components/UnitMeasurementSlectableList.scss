@@ -1,0 +1,29 @@
+@import '../vars';
+
+.unit-measurement-selectable-list {
+	&__type-title, &__subtype-title {
+		padding: .5em;
+		font-weight: bold;
+		color: lighten($secondary, 30);
+		border-top: .0625em solid darken($fond, 5);
+		border-bottom: .0625em solid darken($fond, 5);
+		background-color: $fond;
+	}
+
+	&__subtype-title {
+		padding: .25em .5em;
+		font-style: italic;
+		border-top: none;
+	}
+
+	&__message {
+		padding: .5em 1em;
+		font-weight: bold;
+		text-align: center;
+		color: lighten($secondary, 40);
+	}
+
+	.MuiPaper-root {
+		max-width: 400px;
+	}
+}

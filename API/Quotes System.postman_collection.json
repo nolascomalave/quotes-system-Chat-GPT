@@ -1,0 +1,317 @@
+{
+	"info": {
+		"_postman_id": "cc1ae7af-c7d5-41ce-a682-8e57278e9a97",
+		"name": "Quotes System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "Get All Clients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/clients",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Client By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/clients/61f367918a9d7c01937c6299",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clients",
+								"61f367918a9d7c01937c6299"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "natural",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Hi Connection",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "nolasco",
+									"type": "text"
+								},
+								{
+									"key": "second_name",
+									"value": "rafael",
+									"type": "text"
+								},
+								{
+									"key": "first_lastname",
+									"value": "malavé",
+									"type": "text"
+								},
+								{
+									"key": "second_lastname",
+									"value": "castro",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "ssn",
+									"value": "123456786",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "nolascomalave_enterprise@hotmail.com",
+									"type": "text"
+								},
+								{
+									"key": "first_phone",
+									"value": "6147558935",
+									"type": "text"
+								},
+								{
+									"key": "second_phone",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "adress",
+									"value": "Dirección de vivienda.",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/HI CONNECTION SERVER/OneDrive/Imágenes/5a4525cd546ddca7e1fcbc84.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/clients",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Client",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "natural",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Hi Connection",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "Ocsalon",
+									"type": "text"
+								},
+								{
+									"key": "second_name",
+									"value": "rafael",
+									"type": "text"
+								},
+								{
+									"key": "first_lastname",
+									"value": "malavé",
+									"type": "text"
+								},
+								{
+									"key": "second_lastname",
+									"value": "castro",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "ssn",
+									"value": "123456786",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "nolascomalave_enterpryse@hotmail.com",
+									"type": "text"
+								},
+								{
+									"key": "first_phone",
+									"value": "6147558935",
+									"type": "text"
+								},
+								{
+									"key": "second_phone",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "adress",
+									"value": "Dirección de vivienda.",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "clientId",
+									"value": "61f369238a9d7c01937c62e9",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/clients",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User By ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userPass",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "clientId",
+									"value": "61f367918a9d7c01937c6299",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/clients",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"clients"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/users/61e9de9b7ad099f6af208fe4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"61e9de9b7ad099f6af208fe4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
